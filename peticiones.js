@@ -13,6 +13,12 @@ function funcionPagina2() {
     return "Pagina 2";
 }
 
+function funcionFavicon() {
+    console.log("El navegador ah echo peticion de Favicon.ico");
+    return "Req de Favicon.ico, no deveria retornar nada aqui ;-)";
+}
+
 exports.exportsInicioModuloPeticiones = funcionInicio;
 exports.exportsPagina1ModuloPeticiones = funcionPagina1;
 exports.exportsPagina2ModuloPeticiones = funcionPagina2;
+exports.exportsFaviconModuloPeticiones = funcionFavicon;
