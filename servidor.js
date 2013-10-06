@@ -1,7 +1,7 @@
 var variableModuloHttp = require("http");
 var variableModuloUrl = require("url");
 
-function funcionIniciar(argumentoFuncionIniciar) {
+function funcionIniciar(arg_funcIniciar_ModRutear,manejador) {
 
     function funcionArrancaServidor(requiere, respuesta) {
 
@@ -9,7 +9,7 @@ function funcionIniciar(argumentoFuncionIniciar) {
 
         console.log("Alguien se ha conectado desde un navegador");
 
-        argumentoFuncionIniciar(variableRuta);
+        arg_funcIniciar_ModRutear(manejador,variableRuta);
 
         respuesta.writeHead(200,{"Content-Type":"text/html"});
         respuesta.write("<h1>El servido Funciona Correctamente usando Ahora Modulo</h1>");
