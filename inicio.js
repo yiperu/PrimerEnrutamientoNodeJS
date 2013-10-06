@@ -1,3 +1,4 @@
-var miServidor = require("./servidor");
+var variableServidor = require("./servidor");
+var variableEnrutador = require("./enrutador");
 
-miServidor.exportsDeServidor();
+variableServidor.exportsDeServidor(variableEnrutador.parametroRutear);
