@@ -4,6 +4,7 @@ function funcionEnrutar(arg_manejador,arg_ruta) {
         return arg_manejador[arg_ruta]();
     } else {
         console.log("No Existe una funcion para la ruta: "+arg_ruta);
+        return "No Existe esta Pagina";
     }
 
 

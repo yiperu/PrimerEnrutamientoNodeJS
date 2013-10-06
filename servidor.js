@@ -1,5 +1,6 @@
 var variableModuloHttp = require("http");
 var variableModuloUrl = require("url");
+var variableModuloFs = require("fs");
 
 function funcionIniciar(arg_funcIniciar_ModRutear,manejador) {
 
@@ -10,6 +11,9 @@ function funcionIniciar(arg_funcIniciar_ModRutear,manejador) {
         console.log("Alguien se ha conectado desde un navegador");
 
         var varContenido = arg_funcIniciar_ModRutear(manejador,variableRuta);
+
+        var registro = variableModuloFs.createWriteStream('registro.txt',{'flags':'a'});
+        registro.write(variableRuta + '\n');
 
         respuesta.writeHead(200,{"Content-Type":"text/html"});
         respuesta.write(varContenido);
