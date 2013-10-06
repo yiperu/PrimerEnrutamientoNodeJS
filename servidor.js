@@ -9,10 +9,10 @@ function funcionIniciar(arg_funcIniciar_ModRutear,manejador) {
 
         console.log("Alguien se ha conectado desde un navegador");
 
-        arg_funcIniciar_ModRutear(manejador,variableRuta);
+        var varContenido = arg_funcIniciar_ModRutear(manejador,variableRuta);
 
         respuesta.writeHead(200,{"Content-Type":"text/html"});
-        respuesta.write("<h1>El servido Funciona Correctamente usando Ahora Modulo</h1>");
+        respuesta.write(varContenido);
         respuesta.end("El texto que escribo aqui tambien se muestra en el navegador");
     }
     variableModuloHttp.createServer(funcionArrancaServidor).listen(8888);
