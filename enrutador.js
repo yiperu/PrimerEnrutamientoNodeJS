@@ -1,6 +1,12 @@
 function funcionEnrutar(arg_manejador,arg_ruta) {
     console.log("Voy a Rutear algo para " + arg_ruta);
-    return arg_manejador[arg_ruta]();
+    if (typeof arg_manejador[arg_ruta] === 'function') {
+        return arg_manejador[arg_ruta]();
+    } else {
+        console.log("No Existe una funcion para la ruta: "+arg_ruta);
+    }
+
+
 }
 
 exports.parametroRutear = funcionEnrutar;
